@@ -28,7 +28,7 @@ class Member < ActiveRecord::Base
     end
 
     def rank_format
-        "${rank}%"
+        "#{rank}%"
     end    
 
     # def total
