@@ -27,6 +27,10 @@ class Member < ActiveRecord::Base
         (meetings_attended_count.to_f / should_have_attended_count.to_f) * 100        
     end
 
+    def rank_format
+        "${rank}%"
+    end    
+
     # def total
     #     binding.pry
     # end
