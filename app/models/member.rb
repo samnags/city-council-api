@@ -23,6 +23,10 @@ class Member < ActiveRecord::Base
         self.should_have_attended_count - self.meetings_attended_count
     end
 
+    def ranking
+        (should_have_attended_count % meetings_attended_count) * 100
+    end
+
     # def total
     #     binding.pry
     # end
