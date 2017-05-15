@@ -11,6 +11,10 @@ class Attendance < ActiveRecord::Base
     def attended_format
         self.attended ? "Yes" : "No"
     end
+    
+    def date_format
+        self.meeting.date.strftime("%A %b %e %Y")
+    end
 
 end
 
