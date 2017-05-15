@@ -13,6 +13,7 @@ class Attendance < ActiveRecord::Base
     end
     
     def date_format
+        binding.pry
         self.meeting.date.strftime("%A %b %e %Y")
     end
 
