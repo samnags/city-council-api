@@ -3,4 +3,5 @@ class AttendancesController < ApplicationController
         attendances = Attendance.all
         render json: attendances
     end
+ 
 end
