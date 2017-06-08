@@ -24,7 +24,8 @@ class Member < ActiveRecord::Base
     end
 
     def rank
-        (meetings_attended_count.to_f / should_have_attended_count.to_f) * 100        
+        binding.pry
+        ((meetings_attended_count.to_f / should_have_attended_count.to_f) * 100).round(2)        
     end
 
     def rank_format
