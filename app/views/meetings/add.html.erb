@@ -1,0 +1,11 @@
+
+<%= flash[:notice] %>
+<br/>
+<br/>
+
+<h1>Add a Meeting</h1>
+
+<%= form_tag import_meetings_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Upload CSV "%>
+<% end %>
