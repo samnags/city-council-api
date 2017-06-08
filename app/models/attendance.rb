@@ -3,6 +3,12 @@ class Attendance < ActiveRecord::Base
     belongs_to :member
     belongs_to :meeting
 
+    validates :meeting, presence: true 
+    validates :member, presence: true 
+    validates :attended, inclusion: { in: [true, false],
+        message: "%{value} must be boolean true or false" }    
+
+
     scope :did_attend, -> { where(attended: true)}
 
     def in_session_format        
