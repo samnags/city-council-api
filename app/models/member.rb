@@ -23,12 +23,12 @@ class Member < ActiveRecord::Base
         self.should_have_attended_count - self.meetings_attended_count
     end
 
-    def rank        
+    def rank                
         (meetings_attended_count.to_f / should_have_attended_count.to_f) * 100
     end
 
-    def rank_format
-        "#{rank}%"
+    def rank_format        
+        "#{rank.round(2)}%"
     end    
 
 end
