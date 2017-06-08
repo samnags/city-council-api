@@ -23,30 +23,16 @@ class Member < ActiveRecord::Base
         self.should_have_attended_count - self.meetings_attended_count
     end
 
-    def rank
-        binding.pry
-        ((meetings_attended_count.to_f / should_have_attended_count.to_f) * 100).round(2)        
+    def rank        
+        (meetings_attended_count.to_f / should_have_attended_count.to_f) * 100
     end
 
     def rank_format
         "#{rank}%"
     end    
 
-    # def total
-    #     binding.pry
-    # end
-
-    
-    
-
-    def ranking
-        #
-    end
-    
-
 end
 
-# closet through find_by_sql
 # Meeting.find_by_sql("SELECT * FROM meetings WHERE meetings.date >= ? AND meetings.in_session = 'true'", self.first_day.to_s)
 
 
