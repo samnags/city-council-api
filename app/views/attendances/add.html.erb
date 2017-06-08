@@ -3,9 +3,9 @@
 <br/>
 <br/>
 
-<h1>Add Meetings</h1>
+<h1>Add Attendances</h1>
 
-<%= form_tag import_meetings_path, multipart: true do %>
+<%= form_tag import_attendances_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Upload CSV "%>
 <% end %>

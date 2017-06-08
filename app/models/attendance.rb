@@ -18,7 +18,7 @@ class Attendance < ActiveRecord::Base
     end
 
      def self.import(file)
-       CSV.foreach(file, headers: true) do |row|
+       CSV.foreach(file.path, headers: true) do |row|
             new_row = row.to_hash
             meeting = Meeting.find_by(date: new_row["meeting_date"])
             member = Member.find_by(last_name: new_row["member_last_name"])

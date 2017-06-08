@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   scope 'api/' do
     resources :attendances do
-      collection { post :import }
+      collection do 
+        post 'import'
+        get 'add'
+      end 
     end
     
     resources :meetings do 
       collection do 
         post 'import'
         get 'add'
-      end 
-      
+      end       
     end
     
     resources :members
